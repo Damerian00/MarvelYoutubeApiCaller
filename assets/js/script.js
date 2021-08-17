@@ -18,10 +18,10 @@
 
 
 
-let searchQuery = 'Cyclops';
+let searchQuery = 'SpiderMan';
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
-// let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?key=${ytApiKey}`;
-let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=id,topicDetails,contentDetails&chart=mostPopular&key=${ytApiKey}`;
+// let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=snippet&chart=mostPopular&key=${ytApiKey}`;
+let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchQuery}&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
 fetch(ytUrl)
 .then(function (response) {
     if (response.ok) {
@@ -38,3 +38,17 @@ fetch(ytUrl)
          })
     }
   }  )  
+
+  
+  /* 
+  let video = '';
+  let videos = document.QuerySelctor('#vids');
+
+  array.forEach(element => {
+      
+  });
+  data.items */
+
+  /*
+  item.id.videoId
+  https://www.youtube.com/watch?v=Y1J9_9-vNcU */
