@@ -1,11 +1,15 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
+var searchBox = document.querySelector("#characterInput").value;
 
 
 function searchAPI () {
-    var searchBox = document.querySelector("#characterInput").value;
     var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 
     fetch(marvelCharacterUrl)
+var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+let charVid = document.querySelector('#charVid');
+let charLinks = document.querySelector('#charLinks');
+fetch(marvelCharacterUrl)
     .then(async function (response) {
         if(response.ok){
             const marvelCharacterData = await response.json();
@@ -26,15 +30,6 @@ function searchAPI () {
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
 
 
-// function showCharacterImage (object) {
-//     document.getElementById("Storm").textContent = results[0].name;
-//     console.log(results[0].name);
-//     var img = document.createElementby("img");
-//     img.src = results[0].thumbnail.path + " .jpg";
-//     document.getElementById("pic").appendChild(img);
-
-// };
-
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=Marvel,${searchBox}&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
 fetch(ytUrl)
@@ -47,6 +42,17 @@ fetch(ytUrl)
                let video = ytData.items[i].id.videoId
                console.log(video);
                let link =  `https://www.youtube.com/watch?v=${video}`;
+               let vTag = document.createElement('iframe');
+               vTag.classList = "query p-2";
+               vTag.src = `https://www.youtube.com/embed/${video}`;
+               let aTag = document.createElement('a');
+               aTag.classList = "p-2 bg-secondary text-center";
+               charVid.appendChild(vTag);
+               aTag.href = link;
+               aTag.setAttribute("target", "_blank")
+               aTag.innerHTML = searchBox.toUpperCase();
+               charLinks.appendChild(aTag); 
+
                console.log(link);
                
                
@@ -61,16 +67,3 @@ fetch(ytUrl)
     }
 }  )  
 
-  
-  /* 
-
-  let video = '';
-  let videos = document.QuerySelctor('#vids');
-
-  array.forEach(element => {
-      
-  });
-  data.items */
-
-  /*
-  https://www.youtube.com/watch?v=Y1J9_9-vNcU */
