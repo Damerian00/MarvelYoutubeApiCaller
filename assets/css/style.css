@@ -1,0 +1,106 @@
+:root {
+  --darkblue: #13293d;
+}
+
+.custom-bg {
+  background-color: var(--darkblue);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  header {
+    padding: 60px;
+    text-align: center;
+    background: #13293d;
+    color: #fff;
+  }
+
+  .Header-img {
+    background-color: #fff;
+    width: 75%;
+    height: 200px;
+    border: 1px solid black;
+  }
+  
+  nav {
+    display: flex;
+    background-color: #13293d;
+    color: #fff;
+  }
+  
+  main {
+    display: flex;
+  }
+
+  .char-Img {
+    max-width: 50%;
+    height: 200px;
+    border: 1px solid black;
+  }
+  
+  section {
+    background-color: #fff;
+    padding: 20px;
+  }
+
+  .char-Vid {
+    flex: 40%;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid black;
+  }
+
+  .char-Bio {
+    text-align: center;
+    flex: 100%;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid black;
+  }
+
+  .char-Links {
+    text-align: center;
+    flex: 100%;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid black;
+  }
+  
+  footer {
+    padding: 5px;
+    text-align: center;
+    background: #13293d;
+    color: black;
+  }
+  
+  
+  
+  
+  /* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict */
+  
+  /* Tablets */
+  @media screen and (max-width: 992px) {
+   
+  }
+  
+  /* Large smartphones  */
+  @media screen and (max-width: 768px) {
+    
+  }
+  
+  /* Small smartphones  */
+  @media screen and (max-width: 576px) {
+    
+    
+  }
+  

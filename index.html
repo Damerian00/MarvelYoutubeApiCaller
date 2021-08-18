@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Marvel-Youtube</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
-=======
     <title>Marvel Youtube Search</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
 
   <body>
+    
     <!-- Header -->
-    <header>
+    <header class="custom-bg">
       <h1>Marvel Character Search</h1>
-      <img src="assets/marvel-heroes.jpg" class="Header-img">
+      <img src="assets/img/marvel-heroes.jpg" class="Header-img">
     </header>
 
     <!-- Navbar -->
     <nav>
-        <input type="text" placeholder="Search..">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="text" placeholder="Search Marvel Characters..">
+        <button type="submit"></button>
     </nav>
 
     <!-- Body -->
     <main>
-      <aside>
-        <div class="sample-img">Character Image</div>
-      </aside>
+        <section class="container-fluid">
 
-      <section>
-        <div class="sample-img">Youtube box</div>
-      </section>
+            <section class="row">
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div id="charImg">
+                        <img src="assets/img/SelfPortrait.JPG" class=".char-Img">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div id="charVid">
+                        <iframe src="https://www.youtube.com/embed/3FqGnkMBLZ8" width="540" height="310"></iframe>
+                    </div>
+                </div>
+            </section>  
+
+            <section class="row">
+                <div class="col-12 char-Bio">
+                    <div id="charBio">Bio Box</div>
+                </div> 
+            </section>
+
+            <section class="row">
+                <div class="col-12 char-Links">
+                    <div id="charLinks">Most Recent You Tube links</div>
+                </div>
+            </section>
+
+        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer 
     <footer>
-        <div class="sample-img">Most Recent You Tube links</div>
-    </footer>
+        <div id="charLinks">Most Recent You Tube links</div>
+    </footer>-->
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
 
->>>>>>> 67c8c9d97e81a581ea700cf112fdb764460aa7a6
