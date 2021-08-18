@@ -1,15 +1,13 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
-var searchBox = document.querySelector("#characterInput").value;
-
-
-function searchAPI () {
-    var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
-
-    fetch(marvelCharacterUrl)
-var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 let charVid = document.querySelector('#charVid');
 let charLinks = document.querySelector('#charLinks');
-fetch(marvelCharacterUrl)
+
+function searchAPI () {
+    var searchBox = document.querySelector("#characterInput").value;
+    var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+
+    
+    fetch(marvelCharacterUrl)
     .then(async function (response) {
         if(response.ok){
             const marvelCharacterData = await response.json();
@@ -17,8 +15,7 @@ fetch(marvelCharacterUrl)
             console.log(marvelCharacterData.data.results[0].thumbnail.path + "/portrait_uncanny.jpg")
             document.querySelector("#characterImg").setAttribute("src", marvelCharacterData.data.results[0].thumbnail.path + "/portrait_uncanny.jpg") 
             document.querySelector("#charBio").textContent = marvelCharacterData.data.results[0].description;
-
-            // showCharacterImage(marvel)
+            
         }  else {
             response.text().then(marvelCharacterData => {
             console.log(marvelCharacterData);
@@ -29,6 +26,8 @@ fetch(marvelCharacterUrl)
 
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
 
+//    fetch(marvelCharacterUrl)
+// var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=Marvel,${searchBox}&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
