@@ -2,6 +2,7 @@ const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
 var searchBox = "Storm";
 var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 let charVid = document.querySelector('#charVid');
+let charLinks = document.querySelector('#charLinks');
 fetch(marvelCharacterUrl)
     .then(async function (response) {
         if(response.ok){
@@ -49,7 +50,7 @@ fetch(ytUrl)
                aTag.href = link;
                aTag.setAttribute("target", "_blank")
                aTag.innerHTML = searchBox.toUpperCase();
-               charVid.appendChild(aTag); 
+               charLinks.appendChild(aTag); 
 
                console.log(link);
                
