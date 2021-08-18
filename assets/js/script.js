@@ -23,6 +23,10 @@ function showCharacterImage () {
 
 };
 
+function showCharacterBio () {
+    
+}
+
 
 //document.getElementById("search").addEventListener("click", searchBox);
 // let searchQuery = 'Cyclops';
@@ -42,8 +46,7 @@ function showCharacterImage () {
 //         response.text().then(ytData => {
 //             console.log(ytData);
              
-//          })
-
+//   })
 
 
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
