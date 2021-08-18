@@ -1,7 +1,7 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
 var searchBox = "Storm";
 var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
-
+let charVid = document.querySelector('#charVid');
 fetch(marvelCharacterUrl)
     .then(async function (response) {
         if(response.ok){
@@ -24,25 +24,7 @@ function showCharacterImage () {
 };
 
 
-//document.getElementById("search").addEventListener("click", searchBox);
-// let searchQuery = 'Cyclops';
-// let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
-// // let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?key=${ytApiKey}`;
-// let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=id,topicDetails,contentDetails&chart=mostPopular&key=${ytApiKey}`;
-// fetch(ytUrl)
-// .then(function (response) {
-//     if (response.ok) {
-       
-//         response.json().then(ytData => {
-//            console.log(ytData);
-            
-//         })
- 
-//     }   else {
-//         response.text().then(ytData => {
-//             console.log(ytData);
-             
-//          })
+
 
 
 
@@ -58,6 +40,17 @@ fetch(ytUrl)
                let video = ytData.items[i].id.videoId
                console.log(video);
                let link =  `https://www.youtube.com/watch?v=${video}`;
+               let vTag = document.createElement('iframe');
+               vTag.classList = "query p-2";
+               vTag.src = `https://www.youtube.com/embed/${video}`;
+               let aTag = document.createElement('a');
+               aTag.classList = "p-2 bg-secondary text-center";
+               charVid.appendChild(vTag);
+               aTag.href = link;
+               aTag.setAttribute("target", "_blank")
+               aTag.innerHTML = searchBox.toUpperCase();
+               charVid.appendChild(aTag); 
+
                console.log(link);
                
                
@@ -75,8 +68,18 @@ fetch(ytUrl)
   
   /* 
 
+   <div id="charVid" class="col-12 col-md-6 col-xl-6">
+                    
+                        <iframe src="https://www.youtube.com/embed/${video}" width="540" height="310"></iframe>
+                   
+                </div>
+
   let video = '';
   let videos = document.QuerySelctor('#vids');
+  let p = document.createElement("p");
+               p.classList = "query p-2 bg-secondary text-light text-center";
+               p.innerHTML = theResult;
+               rQ.appendChild(p);
 
   array.forEach(element => {
       
