@@ -1,5 +1,5 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
-var searchBox = "storm";
+var searchBox = "Hulk";
 var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 
 fetch(marvelCharacterUrl)
@@ -14,7 +14,24 @@ fetch(marvelCharacterUrl)
     }
 });
 
+//document.getElementById("search").addEventListener("click", searchBox);
 
+function showCharacterImage () {
+    document.getElementById("Hulk").textContent = results[0].name;
+    console.log(results[0].name);
+    // var img = document.createElementby("img");
+    // img.src = results[0].thumbnail.path + " .jpg";
+    // document.getElementById("pic").appendChild(img);
+};
+
+
+
+
+
+
+
+
+//searchButton.addEventListener("click", searchCharacter);
 
 
 
@@ -36,5 +53,3 @@ fetch(marvelCharacterUrl)
 //             console.log(ytData);
              
 //          })
-//     }
-//   }  ) 
