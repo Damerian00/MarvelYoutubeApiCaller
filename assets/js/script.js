@@ -1,5 +1,5 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
-var searchBox = "Hulk";
+var searchBox = "Storm";
 var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 
 fetch(marvelCharacterUrl)
@@ -14,27 +14,17 @@ fetch(marvelCharacterUrl)
     }
 });
 
-//document.getElementById("search").addEventListener("click", searchBox);
-
 function showCharacterImage () {
-    document.getElementById("Hulk").textContent = results[0].name;
+    document.getElementById("Storm").textContent = results[0].name;
     console.log(results[0].name);
-    // var img = document.createElementby("img");
-    // img.src = results[0].thumbnail.path + " .jpg";
-    // document.getElementById("pic").appendChild(img);
+    var img = document.createElementby("img");
+    img.src = results[0].thumbnail.path + " .jpg";
+    document.getElementById("pic").appendChild(img);
+
 };
 
 
-
-
-
-
-
-
-//searchButton.addEventListener("click", searchCharacter);
-
-
-
+//document.getElementById("search").addEventListener("click", searchBox);
 // let searchQuery = 'Cyclops';
 // let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 // // let ytUrl = `https://youtube.googleapis.com/youtube/v3/videos?key=${ytApiKey}`;
