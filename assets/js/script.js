@@ -1,18 +1,18 @@
-// const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
+const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
 let searchBox = "storm";
-// var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
 
-// fetch(marvelCharacterUrl)
-//     .then(async function (response) {
-//         if(response.ok){
-//         const marvelCharacterData = await response.json();
-//             console.log(marvelCharacterData);
-//     }  else {
-//         response.text().then(marvelCharacterData => {
-//             console.log(marvelCharacterData);
-//         })
-//     }
-// });
+fetch(marvelCharacterUrl)
+    .then(async function (response) {
+        if(response.ok){
+        const marvelCharacterData = await response.json();
+            console.log(marvelCharacterData);
+    }  else {
+        response.text().then(marvelCharacterData => {
+            console.log(marvelCharacterData);
+        })
+    }
+});
 
 
 
