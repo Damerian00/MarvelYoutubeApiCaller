@@ -3,14 +3,14 @@ var searchBox;
 let charVid = document.querySelector('#charVid');
 let charLinks = document.querySelector('#charLinks');
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
-let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=Marvel,${searchBox}&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
 
 
 function searchAPI () {
-searchBox = document.querySelector("#characterInput").value;
+    searchBox = document.querySelector("#characterInput").value;
     fetch(marvelCharacterUrl)
     console.log(searchBox);
-var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+    var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+    let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},marvel&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
 fetch(marvelCharacterUrl)
     .then(async function (response) {
         if(response.ok){
