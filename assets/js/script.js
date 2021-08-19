@@ -26,6 +26,13 @@ fetch(marvelCharacterUrl)
                    
                     response.json().then(ytData => {
                        console.log(ytData);
+                       if (charVid.hasChildNodes()){
+                        while (charVid.firstChild) {
+                            charVid.removeChild(charVid.firstChild);
+                          }
+                    }else{
+
+                       }
                        for (let i = 0; i < ytData.items.length; i++) {
                            let video = ytData.items[i].id.videoId
                            console.log(video);
