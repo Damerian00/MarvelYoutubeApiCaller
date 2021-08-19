@@ -62,8 +62,6 @@ function searchAPI() {
                                     charLinks.appendChild(aTag);
 
                                     console.log(link);
-
-
                                 }
                             })
 
