@@ -4,15 +4,14 @@ let charVid = document.querySelector('#charVid');
 let charLinks = document.querySelector('#charLinks');
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 ytApiKey = "AIzaSyCTRbHmUjeCYpRIZoiuxxq6U5S1gabwVUU";
+ytApiKey = 'AIzaSyCt-jME-lT_Sl7HsyQBh331GVdlgD35yEc';
 var charactBio = document.querySelector("#charBio")
 
 
-function searchAPI() {
-    searchBox = document.querySelector("#characterInput").value;
+function searchMarvel(searchBox){
     var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
     fetch(marvelCharacterUrl)
     console.log(searchBox);
-    let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},marvel&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
     fetch(marvelCharacterUrl)
         .then(async function (response) {
             if (response.ok) {
@@ -31,10 +30,24 @@ function searchAPI() {
                     console.log(marvelCharacterData.data.results[i].description)
                     charactBio.innerHTML = marvelCharacterData.data.results[i].description;
                     return
-                }
-                else {
+                }else {
                     console.log("No Bio or Description Available");
                 }
+            }   
+              }  else {
+                response.text().then(marvelCharacterData => {
+                console.log(marvelCharacterData);
+            })
+        }
+    })
+}
+
+
+function searchAPI() {
+searchBox = document.querySelector("#characterInput").value;
+searchMarvel(searchBox);
+let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},marvel&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
+
             fetch(ytUrl)
             .then(function (response) {
                 if (response.ok) {
@@ -74,12 +87,8 @@ function searchAPI() {
                     })
                 }
             }  )  
-        }
-        }  else {
-            response.text().then(marvelCharacterData => {
-            console.log(marvelCharacterData);
-        })
-    }
-});
+        
+      
 }
+
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
