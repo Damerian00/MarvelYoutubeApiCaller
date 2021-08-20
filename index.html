@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Marvel Youtube Search</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-<<<<<<< HEAD
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    
-=======
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"> 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
->>>>>>> a5547a4826f34b550bee6d17132a85023834df84
-</head>
-    <header class="container-fluid custom-bg">
-        <div class="px-1 text-center">
-            <img class="Header-img" src="assets/img/marvel-heroes.jpg">
-            <h1 class="display-5 fw-bold">Marvel Character Search</h1>
-            <div class="col-lg-6 mx-auto">
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <input type="text" placeholder="Search Marvel Characters..">
-                    <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Submit</button>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-            <section class="row">
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div id="charImg">
-                        <img src="assets/img/SelfPortrait.JPG" class="char-Img" id="characterImg">
-                    </div>
-                </div>
-                <div id="charVid" class="col-12 col-md-6 col-xl-6">                                                     
-                </div>
-            </div>
-        </div>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="custom-bg">
+      <h1>Marvel Character Search</h1>
+      <img src="assets/img/marvel-heroes.jpg" class="Header-img">
     </header>
 
+    <!-- Navbar -->
+    <nav>
+        <div class = "searchContainer">
+        <input type="text" placeholder="Search Marvel Characters.." id="characterInput">
+        <button type="submit" id="searchCharacter">Search</button>
+    </div>
+    </nav>
 
-    
-    <main class="container">
-        <section class="row">
-            <div class="col-12 col-md-6 col-xl-6">
-                <div id="charImg">
-                    <img src="assets/img/SelfPortrait.JPG" class=".char-Img">
+    <!-- Body -->
+    <main class ="contains">
+
+                <div id="charVid" class="flex-row align-content-evenly flex-nowrap">
+                    <iframe src="assets/img/ytImg.jpg" class ="col-2 p-2 mx-3" frameborder="0"></iframe>
+                    <iframe src="assets/img/ytImg.jpg" class ="col-2 p-2 mx-3" frameborder="0"></iframe>
+                    <iframe src="assets/img/ytImg.jpg" class ="col-2 p-2 mx-3" frameborder="0"></iframe>
+                    <iframe src="assets/img/ytImg.jpg" class ="col-2 p-2 mx-3" frameborder="0"></iframe>
+                    <iframe src="assets/img/ytImg.jpg" class ="col-2 p-2 mx-3" frameborder="0"></iframe>
+
+            <section class="row">
+                <div class="col-12 char-Bio">
+                    <h3>Character Info</h3>
+                    <p id="charBio">pending search...</div>
+                </div> 
+            </section>
+
+            <section class="row">
+                <div class="char-Links">
+                    <h3>Most Recent You Tube links</h3>
+                    <div id="charLinks" class ="row flex-column">
+                        <a class="p-1 text-center" href="https://www.youtube.com/watch?v=hw4B2lMY5vY" target="_blank">CAPTAIN MARVEL</a>
+                      <a class="p-1 text-center" href="https://www.youtube.com/watch?v=hw4B2lMY5vY" target="_blank">CAPTAIN MARVEL</a>
+                      <a class="p-1 text-center" href="https://www.youtube.com/watch?v=hw4B2lMY5vY" target="_blank">CAPTAIN MARVEL</a>
+                      <a class="p-1 text-center" href="https://www.youtube.com/watch?v=hw4B2lMY5vY" target="_blank">CAPTAIN MARVEL</a>
+                      <a class="p-1 text-center" href="https://www.youtube.com/watch?v=hw4B2lMY5vY" target="_blank">CAPTAIN MARVEL</a>
+
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-6">
-                <div id="charVid">
-                    <iframe src="https://www.youtube.com/embed/3FqGnkMBLZ8" width="540" height="310"></iframe>
-                </div>
-            </div>
+          
         </section>
 
-        <section class="row">
-            <div class="col-12 char-Bio">
-                <div id="charBio">Bio Box</div>
-            </div> 
-        </section>
-
+        
     </main>
 
-    <footer class="container-fluid custom-bg">
-        <div class="row">
-            <div class="col-12 flex-direction=column char-Links">
-                <div id="charLinks">Most Recent You Tube links</div>
-            </div>
-        </div>
-    </footer>
-
+   
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
