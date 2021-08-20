@@ -13,10 +13,6 @@ var characterHistory = "characterHistory";
 
 function searchMarvel(searchBox){
     var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
-
-
-
-function searchAPI() {
     searchBox = document.querySelector("#characterInput").value;
     saveToHistory(searchBox);
     fetch(marvelCharacterUrl)
@@ -101,12 +97,6 @@ let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},mar
 
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
 
-function loadHistory() {
-    if(localStorage.getItem(characterHistory)){
-        characterSearch = JSON.parse(localStorage.getItem(characterHistory));
-        console.log(characterSearch);
-    }
-}
 
 function saveToHistory (character) {
     characterSearch.push(searchBox);
@@ -117,5 +107,10 @@ function saveToHistory (character) {
     console.log(characterSearch);
 }
 
+function loadHistory() {
+    if(localStorage.getItem(characterHistory)){
+        characterSearch = JSON.parse(localStorage.getItem(characterHistory));
+        console.log(characterSearch);
+    }
+}
 loadHistory();
-
