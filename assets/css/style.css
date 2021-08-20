@@ -14,7 +14,7 @@
     font-family: Arial;
     margin: 0;
   }
-  
+  .contains{width:90%;margin:0 auto;}
   header {
     padding: 60px;
     text-align: center;
@@ -32,17 +32,27 @@
   nav {
     display: flex;
     background-color: #13293d;
+    color: #fff   
+    background-color: #13293d;
     color: #fff;
+    padding: 1vh 0;;
   }
-  
+  .searchContainer {margin: 1vh auto;
+       display: block;}
+  #charLinks a{    background-color: rgba(206, 11, 11);
+    color: white; text-decoration: none; font-size:3rem;
+}
   main {
     display: flex;
+    flex-direction: column;
   }
-
+#charImg{margin: 2vh 0;}
   .char-Img {
-    max-width: 50%;
+    
     height: 200px;
     border: 1px solid black;
+    display: block;
+    margin: 0 auto;
   }
   
   section {
@@ -72,7 +82,7 @@
     flex: 100%;
     width: 100%;
     padding: 20px;
-    height: 200px;
+    height: auto;
     border: 1px solid black;
   }
   
