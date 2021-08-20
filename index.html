@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Marvel-Youtube</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
     <title>Marvel Youtube Search</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
 
-  <body>
-    
-    <!-- Header -->
-    <header class="custom-bg">
-      <h1>Marvel Character Search</h1>
-      <img src="assets/img/marvel-heroes.jpg" class="Header-img">
+<body>
+
+    <header class="container-fluid custom-bg">
+        <div class="px-1 text-center">
+            <img class="Header-img" src="assets/img/marvel-heroes.jpg">
+            <h1 class="display-5 fw-bold">Marvel Character Search</h1>
+            <div class="col-lg-6 mx-auto">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <input type="text" placeholder="Search Marvel Characters..">
+                    <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Submit</button>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Navbar -->
-    <nav>
-        <input type="text" placeholder="Search Marvel Characters..">
-        <button type="submit"></button>
-    </nav>
-
-    <!-- Body -->
-    <main>
-        <section class="container-fluid">
-
-            <section class="row">
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div id="charImg">
-                        <img src="assets/img/SelfPortrait.JPG" class=".char-Img">
-                    </div>
+    
+    <main class="container">
+        <section class="row">
+            <div class="col-12 col-md-6 col-xl-6">
+                <div id="charImg">
+                    <img src="assets/img/SelfPortrait.JPG" class=".char-Img">
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div id="charVid">
-                        <iframe src="https://www.youtube.com/embed/3FqGnkMBLZ8" width="540" height="310"></iframe>
-                    </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-6">
+                <div id="charVid">
+                    <iframe src="https://www.youtube.com/embed/3FqGnkMBLZ8" width="540" height="310"></iframe>
                 </div>
-            </section>  
-
-            <section class="row">
-                <div class="col-12 char-Bio">
-                    <div id="charBio">Bio Box</div>
-                </div> 
-            </section>
-
-            <section class="row">
-                <div class="col-12 char-Links">
-                    <div id="charLinks">Most Recent You Tube links</div>
-                </div>
-            </section>
-
+            </div>
         </section>
+
+        <section class="row">
+            <div class="col-12 char-Bio">
+                <div id="charBio">Bio Box</div>
+            </div> 
+        </section>
+
     </main>
 
-    <!-- Footer 
-    <footer>
-        <div id="charLinks">Most Recent You Tube links</div>
-    </footer>-->
+    <footer class="container-fluid custom-bg">
+        <div class="row">
+            <div class="col-12 flex-direction=column char-Links">
+                <div id="charLinks">Most Recent You Tube links</div>
+            </div>
+        </div>
+    </footer>
 
     <script src="assets/js/script.js"></script>
-  </body>
+</body>
 </html>
