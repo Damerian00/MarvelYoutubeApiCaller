@@ -33,7 +33,7 @@ function searchAPI() {
                 } else if (marvelCharacterData.data.results[i].description !== ""){
                     console.log(marvelCharacterData.data.results[i].description)
                     charactBio.innerHTML = marvelCharacterData.data.results[i].description;
-                    //return
+                    return
                 }
                 else {
                     console.log("No Bio or Description Available");
@@ -52,7 +52,7 @@ function searchAPI() {
                        }
                        if (charLinks.hasChildNodes()){
                         while (charLinks.firstChild) {
-                            charLinks.removeChild(charVid.firstChild);
+                            charLinks.removeChild(charLinks.firstChild);
                           }
                     } else {}
                        for (let i = 0; i < ytData.items.length; i++) {
