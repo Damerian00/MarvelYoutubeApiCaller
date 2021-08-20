@@ -3,11 +3,14 @@ var searchBox;
 let charVid = document.querySelector('#charVid');
 let charLinks = document.querySelector('#charLinks');
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
-var charactBio = document.querySelector("#charBio")
+var charactBio = document.querySelector("#charBio");
+var characterSearch = [];
+var characterHistory = "characterHistory";
 
 
 function searchAPI() {
     searchBox = document.querySelector("#characterInput").value;
+    saveToHistory(searchBox);
     fetch(marvelCharacterUrl)
     console.log(searchBox);
     var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
@@ -20,9 +23,8 @@ function searchAPI() {
                 console.log(marvelCharacterData.data.results[0].thumbnail.path + "/portrait_uncanny.jpg")
                 document.querySelector("#characterImg").setAttribute("src", marvelCharacterData.data.results[0].thumbnail.path + "/portrait_uncanny.jpg")
                 charactBio.innerHTML = marvelCharacterData.data.results[0].description;
-                        console.log("is this an array?", marvelCharacterData.data.results);
+                console.log("is this an array?", marvelCharacterData.data.results);
                             
-                    
                 for (var i = 0; i < marvelCharacterData.data.results.length; i++) {
                 if (marvelCharacterData.data.results[i].description == "") {
                     searchBox = searchBox.toUpperCase();
@@ -36,6 +38,7 @@ function searchAPI() {
                 else {
                     console.log("No Bio or Description Available");
                 }
+
             fetch(ytUrl)
             .then(function (response) {
                 if (response.ok) {
@@ -49,7 +52,7 @@ function searchAPI() {
                        }
                        if (charLinks.hasChildNodes()){
                         while (charLinks.firstChild) {
-                            charLinks.removeChild(charLinks.firstChild);
+                            charLinks.removeChild(charVid.firstChild);
                           }
                     } else {}
                        for (let i = 0; i < ytData.items.length; i++) {
@@ -84,3 +87,22 @@ function searchAPI() {
 });
 }
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
+
+function loadHistory() {
+    if(localStorage.getItem(characterHistory)){
+        characterSearch = JSON.parse(localStorage.getItem(characterHistory));
+        console.log(characterSearch);
+    }
+}
+
+function saveToHistory (character) {
+    characterSearch.push(searchBox);
+    if (characterSearch.length > 5) {
+        characterSearch.shift();  
+    }
+    localStorage.setItem(characterHistory, JSON.stringify(characterSearch));  
+    console.log(characterSearch);
+}
+
+loadHistory();
+
