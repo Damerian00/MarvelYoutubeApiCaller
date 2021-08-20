@@ -23,6 +23,7 @@
   }
 
   .Header-img {
+
     background-color: #fff;
     width: 75%;
     height: 200px;
@@ -32,10 +33,11 @@
   nav {
     display: flex;
     background-color: #13293d;
-    color: #fff   
+    color: #fff ;  
     background-color: #13293d;
     color: #fff;
     padding: 1vh 0;;
+
   }
   .searchContainer {margin: 1vh auto;
        display: block;}
@@ -50,11 +52,13 @@
   .char-Img {
     
     height: 200px;
+
     border: 1px solid black;
     display: block;
     margin: 0 auto;
+
   }
-  
+
   section {
     background-color: #fff;
     padding: 20px;
@@ -65,7 +69,6 @@
     width: 100%;
     padding: 20px;
     height: 200px;
-    border: 1px solid black;
   }
 
   .char-Bio {
@@ -90,9 +93,8 @@
     padding: 5px;
     text-align: center;
     background: #13293d;
-    color: black;
+    color: #fff;
   }
-  
   
   
   

@@ -6,10 +6,19 @@ let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 ytApiKey = "AIzaSyCTRbHmUjeCYpRIZoiuxxq6U5S1gabwVUU";
 ytApiKey = 'AIzaSyCt-jME-lT_Sl7HsyQBh331GVdlgD35yEc';
 var charactBio = document.querySelector("#charBio")
+var charactBio = document.querySelector("#charBio");
+var characterSearch = [];
+var characterHistory = "characterHistory";
 
 
 function searchMarvel(searchBox){
     var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+
+
+
+function searchAPI() {
+    searchBox = document.querySelector("#characterInput").value;
+    saveToHistory(searchBox);
     fetch(marvelCharacterUrl)
     console.log(searchBox);
     fetch(marvelCharacterUrl)
@@ -18,9 +27,8 @@ function searchMarvel(searchBox){
                 const marvelCharacterData = await response.json();
                 document.querySelector("#characterImg").setAttribute("src", marvelCharacterData.data.results[0].thumbnail.path + "/portrait_uncanny.jpg")
                 charactBio.innerHTML = marvelCharacterData.data.results[0].description;
-                        console.log("is this an array?", marvelCharacterData.data.results);
+                console.log("is this an array?", marvelCharacterData.data.results);
                             
-                    
                 for (var i = 0; i < marvelCharacterData.data.results.length; i++) {
                 if (marvelCharacterData.data.results[i].description == "") {
                     searchBox = searchBox.toUpperCase();
@@ -30,6 +38,7 @@ function searchMarvel(searchBox){
                     console.log(marvelCharacterData.data.results[i].description)
                     charactBio.innerHTML = marvelCharacterData.data.results[i].description;
                     return
+
                 }else {
                     console.log("No Bio or Description Available");
                 }
@@ -47,7 +56,6 @@ function searchAPI() {
 searchBox = document.querySelector("#characterInput").value;
 searchMarvel(searchBox);
 let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},marvel&type=video&part=snippet&chart=mostPopular&key=${ytApiKey}`;
-
             fetch(ytUrl)
             .then(function (response) {
                 if (response.ok) {
@@ -92,3 +100,22 @@ let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},mar
 }
 
 document.querySelector("#searchCharacter").addEventListener("click", searchAPI)
+
+function loadHistory() {
+    if(localStorage.getItem(characterHistory)){
+        characterSearch = JSON.parse(localStorage.getItem(characterHistory));
+        console.log(characterSearch);
+    }
+}
+
+function saveToHistory (character) {
+    characterSearch.push(searchBox);
+    if (characterSearch.length > 5) {
+        characterSearch.shift();  
+    }
+    localStorage.setItem(characterHistory, JSON.stringify(characterSearch));  
+    console.log(characterSearch);
+}
+
+loadHistory();
+
