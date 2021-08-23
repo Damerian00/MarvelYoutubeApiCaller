@@ -102,7 +102,10 @@
   
   /* Tablets */
   @media screen and (max-width: 992px) {
-   
+    #charLinks a{
+      font-size: 1.5rem;
+     }
+     
   }
   
   /* Large smartphones  */
@@ -112,7 +115,6 @@
   
   /* Small smartphones  */
   @media screen and (max-width: 576px) {
-    
-    
+   
   }
   

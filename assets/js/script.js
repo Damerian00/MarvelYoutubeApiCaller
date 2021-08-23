@@ -73,7 +73,7 @@ let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},mar
                            console.log(video);
                            let link =  `https://www.youtube.com/watch?v=${video}`;
                            let vTag = document.createElement('iframe');
-                           vTag.classList = "query col-2 p-2 mx-3";
+                           vTag.classList = "query col-sm-12 col-xl-2 p-2 mx-3";
                            vTag.src = `https://www.youtube.com/embed/${video}`;
                            let aTag = document.createElement('a');
                            aTag.classList = "p-1 text-center";
