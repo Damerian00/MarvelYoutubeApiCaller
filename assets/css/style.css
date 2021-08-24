@@ -44,6 +44,7 @@
   #charLinks a{    background-color: rgba(206, 11, 11);
     color: white; text-decoration: none; font-size:3rem;
 }
+#charLinks a:hover{cursor: pointer;color:yellow;}
   main {
     display: flex;
     flex-direction: column;

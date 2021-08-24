@@ -80,7 +80,7 @@ let ytUrl = `https://youtube.googleapis.com/youtube/v3/search?q=${searchBox},mar
                            charVid.appendChild(vTag);
                            aTag.href = link;
                            aTag.setAttribute("target", "_blank")
-                           aTag.innerHTML = searchBox.toUpperCase();
+                           aTag.innerHTML = link;
                            charLinks.appendChild(aTag); 
                            console.log(link);
                        }
