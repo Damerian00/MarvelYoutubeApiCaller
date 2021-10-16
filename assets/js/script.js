@@ -1,18 +1,18 @@
 const publicKey = "cf666bb77e15be90b02e3679ffa84cf0";
-var searchBox;
+let searchBox;
 let charVid = document.querySelector('#charVid');
 let charLinks = document.querySelector('#charLinks');
 let ytApiKey = "AIzaSyDiOZ44nzVN6XsP85hiAU76fyZkNyw7hN8";
 ytApiKey = "AIzaSyCTRbHmUjeCYpRIZoiuxxq6U5S1gabwVUU";
 ytApiKey = 'AIzaSyCt-jME-lT_Sl7HsyQBh331GVdlgD35yEc';
-var charactBio = document.querySelector("#charBio")
-var charactBio = document.querySelector("#charBio");
-var characterSearch = [];
-var characterHistory = "characterHistory";
+let charactBio = document.querySelector("#charBio")
+let charactBio = document.querySelector("#charBio");
+let characterSearch = [];
+let characterHistory = "characterHistory";
 
 
 function searchMarvel(searchBox){
-    var marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+    let marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
     searchBox = document.querySelector("#characterInput").value;
     saveToHistory(searchBox);
     fetch(marvelCharacterUrl)
@@ -25,7 +25,7 @@ function searchMarvel(searchBox){
                 charactBio.innerHTML = marvelCharacterData.data.results[0].description;
                 console.log("is this an array?", marvelCharacterData.data.results);
                             
-                for (var i = 0; i < marvelCharacterData.data.results.length; i++) {
+                for (let i = 0; i < marvelCharacterData.data.results.length; i++) {
                 if (marvelCharacterData.data.results[i].description == "") {
                     searchBox = searchBox.toUpperCase();
                     charactBio.innerHTML = `${searchBox}: IS A CHARACTER IN THE MARVEL.`
