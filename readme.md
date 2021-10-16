@@ -61,7 +61,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
- This group project was an attempt to make a site that would utilize Api calls to YouTube amd Marvel to search for characters fro the marvel universe and compare with youtube to see if they have any videos on that character.
+ This group project was an attempt to make a site that would utilize Api calls to YouTube amd Marvel to search for characters from the marvel universe and compare with youtube to see if they have any videos on that character.
 
 
 
