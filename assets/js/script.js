@@ -12,7 +12,10 @@ let characterHistory = "characterHistory";
 
 
 function searchMarvel(searchBox){
+
     let marvelCharacterUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${searchBox}&apikey=${publicKey}`;
+
+
     searchBox = document.querySelector("#characterInput").value;
     saveToHistory(searchBox);
     fetch(marvelCharacterUrl)
